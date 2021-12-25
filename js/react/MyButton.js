@@ -8,11 +8,10 @@ class MyButton extends React.Component {
     super(props);
    // This binding is necessary to make `this` work in the callback
     this.clickMessage = this.clickMessage.bind(this);
-    this.indexChannel;
   }
   
   clickMessage(){
-    alert(aa.tags.cI[this.indexChannel] + " wurde geklickt");
+    alert(aa.tags.cI[this.props.index] + " wurde geklickt");
   }
   
   
@@ -20,9 +19,11 @@ class MyButton extends React.Component {
   render() {
 
       return (
-        <button style={{ background: "red" , margin: "10px" }} onClick={this.clickMessage}>
-          {aa.tags.cI[String(this.indexChannel = this.props.index)]} 
+        <div style={{background: "pink", display: "flex", flexWrap: "wrap", width: "700px", margin: "30px"}}>
+        <button style={{ background: "red" , margin: "10px", width: "200px", height: "30px" }} onClick={this.clickMessage}>
+          {aa.tags.cI[this.props.index]} 
         </button>
+        </div>
 
       );
     }
